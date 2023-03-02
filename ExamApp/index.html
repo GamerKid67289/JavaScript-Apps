@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: rgb(216, 216, 216);
+        }
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "nav nav"
+                "section main"
+            ;
+            gap: 10px;
+            grid-template-columns: 1fr 5fr;
+        }
+        nav {
+            grid-area: nav;
+            background: rgb(245, 245, 245);
+        }
+        section {
+            grid-area: section;
+            background: rgb(209, 209, 209);
+            height: 90vh;
+            border-radius: 5px;
+        }
+        main {
+            grid-area: main;
+            background: rgb(210, 210, 211);
+            height: 90vh;
+            border-radius: 5px;
+        }
+        /* inner elements */
+        header {
+            background: linear-gradient(rgb(157, 157, 230), rgb(24, 24, 82));
+            color:rgb(210, 210, 211);
+            height: 40px;
+            padding-top: 10px;
+            box-sizing: border-box;
+        }
+        .questions-numbers-container {
+            background: #fff;
+            height: 200px;
+            box-shadow: 0px 5px rgb(128, 128, 128, .1);
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 5%;
+        }
+        .selection-type-container {
+            background: #fff;
+            height: 100px;
+            margin-top: 10px;
+            padding: 10px 2px;
+            box-sizing: border-box;
+        }
+        h6 { 
+            text-align: center;
+            margin: 0 0 15px 0;
+        }
+        span {
+            font-size: 8px;
+            font-weight: bold;
+        }
+        .box{
+            height: 20px;
+            width: 20px;
+            display: flex;
+            margin: 0 5px 0 5px;
+            border-radius: 4px;
+            align-items: center;
+            justify-content: center;
+        }
+        .blue{
+            background: blue;
+            cursor: pointer;
+        }
+        .no-color {
+            background: white;
+            border: 1px solid grey;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>nav</nav>
+        <section>
+            <header style="text-align: center;">Questions</header>
+            <div class="questions-numbers-container">
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box no-color">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+                <span class="box blue">1</span>
+            </div>
+            <div class="selection-type-container">
+                <h6>Selection Type</h6>
+                <div style="display: flex; align-items: center; justify-content: space-around">
+                    <div style="display: flex; align-items: center;">
+                        <span class="box blue"></span>
+                        <span>Attempted</span>
+                    </div>
+                    <div style="display: flex; align-items: center;">    
+                        <span class="box no-color"></span>
+                        <span>Not Attempted</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <main>
+            <header>Heading</header>
+        </main>
+    </div>
+</body>
+</html>
