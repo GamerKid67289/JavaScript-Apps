@@ -8,6 +8,7 @@
     <style>
         body {
             background: rgb(216, 216, 216);
+            margin: 0;
         }
         .container {
             display: grid;
@@ -20,21 +21,50 @@
         }
         nav {
             grid-area: nav;
-            background: rgb(245, 245, 245);
+            background: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            padding: 0 10px;
         }
         section {
             grid-area: section;
-            background: rgb(209, 209, 209);
-            height: 90vh;
+            background: rgb(236, 236, 236);
+            height: 85vh;
             border-radius: 5px;
+            margin-left: 10px;
         }
         main {
             grid-area: main;
-            background: rgb(210, 210, 211);
-            height: 90vh;
+            background: rgb(235, 235, 235);
+            height: 85vh;
             border-radius: 5px;
+            margin-right: 10px;
         }
         /* inner elements */
+        /* nav */
+        .left {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 250px;
+        }
+        .timer-counter {
+            background: #ddd;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+        .finish-test {
+            width: 100px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 5px 20px rgb(128, 128, 128, .7);
+        }
+        /* shared btw section and main */
         header {
             background: linear-gradient(rgb(157, 157, 230), rgb(24, 24, 82));
             color:rgb(210, 210, 211);
@@ -42,16 +72,20 @@
             padding-top: 10px;
             box-sizing: border-box;
             text-align: center;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
         }
+        /* section */
         .questions-numbers-container {
             background: #fff;
             height: 200px;
             box-shadow: 0px 5px rgb(128, 128, 128, .1);
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
-            display: flex;
             flex-wrap: wrap;
             padding: 5%;
+            display: grid;
+            grid-template-columns: repeat(5, 21%);
         }
         .selection-type-container {
             background: #fff;
@@ -60,31 +94,44 @@
             padding: 10px 2px;
             box-sizing: border-box;
         }
-        h6 { 
+        h6.selection-type { 
             text-align: center;
             margin: 0 0 15px 0;
-        }
-        span {
-            font-size: 8px;
-            font-weight: bold;
         }
         .box{
             height: 20px;
             width: 20px;
             display: flex;
-            margin: 0 5px 0 5px;
             border-radius: 4px;
             align-items: center;
             justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .little-text {
+            font-size: 10px;
         }
         .blue{
             background: blue;
             cursor: pointer;
+            color: white;
         }
         .no-color {
             background: white;
             border: 1px solid grey;
             cursor: pointer;
+        }
+        .blue:hover{
+            background: rgb(60, 60, 231);
+        }
+        .no-color:hover {
+            background: rgb(230, 229, 229);
+        }
+        .blue:active{
+            background: blue;
+        }
+        .no-color:active {
+            background: white;
         }
         /* main */
         article {
@@ -96,6 +143,10 @@
             padding: 10px 5px;
             display: flex;
             border-radius: 5px;
+        }
+        .question {
+            font-size: 18px;
+            font-weight: bold;
         }
         span.list {
             font-size: 16px;
@@ -113,22 +164,32 @@
             padding: 10px;
             margin: 20px auto;
             border-radius: 5px;
+            box-shadow: 0px 5px 20px rgb(128, 128, 128, .7)
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <nav>nav</nav>
+        <nav>
+            <div class="logo">Exam App</div>
+            <div class="left">
+                <div class="timer">
+                    Time Left
+                    <span class="timer-counter">01:00</span>
+                </div>
+                <div class="finish-test blue">Finish Test</div>
+            </div>
+        </nav>
         <section>
             <header>Questions</header>
             <div class="questions-numbers-container">
                 <span class="box blue">1</span>
-                <span class="box blue">1</span>
-                <span class="box blue">1</span>
-                <span class="box blue">1</span>
-                <span class="box blue">1</span>
-                <span class="box blue">1</span>
-                <span class="box blue">1</span>
+                <span class="box blue">2</span>
+                <span class="box blue">3</span>
+                <span class="box blue">4</span>
+                <span class="box blue">5</span>
+                <span class="box blue">6</span>
+                <span class="box blue">7</span>
                 <span class="box no-color">1</span>
                 <span class="box blue">1</span>
                 <span class="box blue">1</span>
@@ -153,15 +214,15 @@
                 <span class="box blue">1</span>
             </div>
             <div class="selection-type-container">
-                <h6>Selection Type</h6>
+                <h6 class="selection-type">Selection Type</h6>
                 <div style="display: flex; align-items: center; justify-content: space-around">
                     <div style="display: flex; align-items: center;">
                         <span class="box blue"></span>
-                        <span>Attempted</span>
+                        <span class="little-text">Attempted</span>
                     </div>
                     <div style="display: flex; align-items: center;">    
                         <span class="box no-color"></span>
-                        <span>Not Attempted</span>
+                        <span class="little-text">Not Attempted</span>
                     </div>
                 </div>
             </div>
@@ -171,7 +232,14 @@
                 Question 1
             </header>
             <article>
-                <div class="question">Lorem ipsum dolor sit amet.</div>
+                <div class="question">
+                    Lorem ipsum dolor sit amet, 
+                    consectetur adipisicing elit. 
+                    Et soluta quidem perferendis blanditiis 
+                    laborum sint placeat dolor, veniam beatae
+                     minima dignissimos assumenda quas! Nam 
+                     obcaecati quidem, rerum ipsam minus explicabo?
+                </div>
                 <div class="option no-color">
                     <span class="list">A.</span>
                     <span class="text">Lorem ipsum dolor sit amet cons</span>
