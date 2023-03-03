@@ -41,6 +41,7 @@
             height: 40px;
             padding-top: 10px;
             box-sizing: border-box;
+            text-align: center;
         }
         .questions-numbers-container {
             background: #fff;
@@ -85,13 +86,41 @@
             border: 1px solid grey;
             cursor: pointer;
         }
+        /* main */
+        article {
+            margin: 10px 10px
+        }
+        .option {
+            width: 50%;
+            margin: 10px 0;
+            padding: 10px 5px;
+            display: flex;
+            border-radius: 5px;
+        }
+        span.list {
+            font-size: 16px;
+            width: 20px;
+            display: block;
+        }
+        span.text {
+            font-size: 16px;
+            width: 90%;
+            display: block;
+        }
+        div.next{
+            width: 100px;
+            text-align: center;
+            padding: 10px;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <nav>nav</nav>
         <section>
-            <header style="text-align: center;">Questions</header>
+            <header>Questions</header>
             <div class="questions-numbers-container">
                 <span class="box blue">1</span>
                 <span class="box blue">1</span>
@@ -138,7 +167,27 @@
             </div>
         </section>
         <main>
-            <header>Heading</header>
+            <header>
+                Question 1
+            </header>
+            <article>
+                <div class="question">Lorem ipsum dolor sit amet.</div>
+                <div class="option no-color">
+                    <span class="list">A.</span>
+                    <span class="text">Lorem ipsum dolor sit amet cons</span>
+                </div>
+                <div class="option blue">
+                    <span class="list">B.</span>
+                    <span class="text">Lorem ipsum dolor sit amet cons</span></div>
+                <div class="option no-color">
+                    <span class="list">C.</span>
+                    <span class="text">Lorem ipsum dolor sit amet cons</span></div>
+                <div class="option no-color">
+                    <span class="list">D.</span>
+                    <span class="text">Lorem ipsum dolor sit amet cons</span>
+                </div>
+                <div class="next blue">Next</div>
+            </article>
         </main>
     </div>
 </body>
